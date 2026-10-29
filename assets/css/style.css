@@ -210,7 +210,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .mini--terra{background:var(--terra);border-color:var(--terra);color:#fff}
 .mini--terra svg{color:#fff}
 .mini--terra h3{color:#fff}
-.mini--terra p{color:#FBE7DC}
+.mini--terra p{color:#fff}
 @media (max-width:1000px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}.svc,.svc--xl{grid-column:span 1}.svc--xl{min-height:400px}.svc-mini{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.svc-mini{grid-template-columns:1fr}}
 @media (max-width:620px){.services{grid-template-columns:1fr}.svc,.svc--xl{min-height:340px}}
@@ -237,7 +237,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .ba__range::-webkit-slider-thumb{-webkit-appearance:none;width:64px;height:400px}
 .ba__range::-moz-range-thumb{width:64px;height:400px;border:0}
 .ba__range:focus-visible + .ba__handle,.ba__stage:has(.ba__range:focus-visible) .ba__grip{outline:3px solid #E8A483;outline-offset:3px}
-.ba__note{margin-top:12px;font-size:13px;color:var(--alu)}
+.ba__note{margin-top:12px;font-size:13px;color:var(--alu-l)}
 .real{margin-top:clamp(48px,6vw,72px);display:grid;gap:24px;align-items:center;padding:clamp(20px,3vw,32px);border-radius:var(--r);background:var(--anth-2);border:1px solid rgba(255,255,255,.08)}
 @media (min-width:960px){.real{grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr)}}
 .real__badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--anth);background:#E8A483;padding:5px 10px;border-radius:999px;margin-bottom:14px}
