@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-  window.ASM_READY = true;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -16,8 +15,8 @@
   var hero = $('.hero');
   var heroImg = $('.hero__media img');
   var openHero = function () { hero.classList.add('is-ready'); };
-  if (heroImg.complete) setTimeout(openHero, 60);
-  else { heroImg.addEventListener('load', openHero); heroImg.addEventListener('error', openHero); }
+  if (heroImg && !heroImg.complete) { heroImg.addEventListener('load', openHero); heroImg.addEventListener('error', openHero); }
+  setTimeout(openHero, heroImg && heroImg.complete ? 60 : 2500); // la baie s'ouvre même si la photo tarde
 
   // En-tête transparent tant qu'on est en haut de la photo
   var header = $('.header');
@@ -218,4 +217,5 @@
   });
 
   var y = $('#annee'); if (y) y.textContent = new Date().getFullYear();
+  window.ASM_READY = true;
 })();

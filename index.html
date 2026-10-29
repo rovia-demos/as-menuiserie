@@ -20,11 +20,14 @@
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/pergola-terrasse-1600.webp" imagesrcset="assets/img/pergola-terrasse-800.webp 800w, assets/img/pergola-terrasse-1600.webp 1600w" imagesizes="100vw">
 <script>document.documentElement.style.setProperty("--vh",innerHeight/100+"px")</script>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 <script>
   document.documentElement.classList.add('js');
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
-  setTimeout(function () { if (!window.ASM_READY) { document.documentElement.classList.remove('motion'); var h = document.querySelector('.header'); if (h) h.classList.remove('is-top'); } }, 4000);
+  // filet de sécurité : si le script plante ou tarde, tout le contenu s'affiche sans animation
+  var asmSafe = function () { document.documentElement.classList.remove('motion'); var h = document.querySelector('.header'); if (h) h.classList.remove('is-top'); };
+  addEventListener('error', function () { if (!window.ASM_READY) asmSafe(); });
+  setTimeout(function () { if (!window.ASM_READY) asmSafe(); }, 3000);
 </script>
 <script type="application/ld+json">
 {
@@ -539,6 +542,6 @@
   <button type="button" class="lightbox__next round" aria-label="Photo suivante"><svg aria-hidden="true"><use href="#i-fleche"/></svg></button>
 </dialog>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=4" defer></script>
 </body>
 </html>
