@@ -139,7 +139,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .quick__list svg{width:26px;height:26px;color:#F2A882;stroke-width:1.6}
 .quick__list a:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.35);transform:translateY(-2px)}
 @media (max-width:1079px){.quick{max-width:560px}.quick__list{grid-template-columns:repeat(6,1fr)}}
-.hero__cap{position:absolute;z-index:1;right:var(--gutter);top:calc(var(--header) + 28px);display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.06em;color:rgba(255,255,255,.8)}
+.hero__cap{position:absolute;z-index:1;right:var(--gutter);top:calc(var(--header) + 28px);display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.02em;color:rgba(255,255,255,.8)}
 .hero__cap i{display:block;width:40px;height:1px;background:currentColor;position:relative}
 .hero__cap i::before,.hero__cap i::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:currentColor}
 .hero__cap i::before{left:0}.hero__cap i::after{right:0}
