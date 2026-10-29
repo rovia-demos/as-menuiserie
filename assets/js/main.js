@@ -13,11 +13,18 @@
   });
 
   // Ouverture de la baie vitrée du haut de page
-  var hero = $('.hero__visual');
-  var heroImg = $('.frame img');
+  var hero = $('.hero');
+  var heroImg = $('.hero__media img');
   var openHero = function () { hero.classList.add('is-ready'); };
-  if (heroImg.complete) requestAnimationFrame(openHero);
+  if (heroImg.complete) setTimeout(openHero, 60);
   else { heroImg.addEventListener('load', openHero); heroImg.addEventListener('error', openHero); }
+
+  // En-tête transparent tant qu'on est en haut de la photo
+  var header = $('.header');
+  var topWatch = document.createElement('div');
+  topWatch.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:90px;pointer-events:none';
+  hero.appendChild(topWatch);
+  new IntersectionObserver(function (en) { header.classList.toggle('is-top', en[0].isIntersecting); }).observe(topWatch);
 
   // Menu mobile
   var burger = $('.burger'), nav = $('#menu');
@@ -25,6 +32,7 @@
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
     nav.classList.toggle('is-open', open);
+    header.classList.toggle('menu-open', open);
   };
   burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
   $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });

@@ -18,13 +18,13 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/img/pergola-terrasse-1600.webp" imagesrcset="assets/img/pergola-terrasse-800.webp 800w, assets/img/pergola-terrasse-1600.webp 1600w" imagesizes="(min-width: 960px) 52vw, 100vw">
+<link rel="preload" as="image" href="assets/img/pergola-terrasse-1600.webp" imagesrcset="assets/img/pergola-terrasse-800.webp 800w, assets/img/pergola-terrasse-1600.webp 1600w" imagesizes="100vw">
 <script>document.documentElement.style.setProperty("--vh",innerHeight/100+"px")</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
   document.documentElement.classList.add('js');
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
-  setTimeout(function () { if (!window.ASM_READY) document.documentElement.classList.remove('motion'); }, 4000);
+  setTimeout(function () { if (!window.ASM_READY) { document.documentElement.classList.remove('motion'); var h = document.querySelector('.header'); if (h) h.classList.remove('is-top'); } }, 4000);
 </script>
 <script type="application/ld+json">
 {
@@ -77,7 +77,7 @@
   </defs>
 </svg>
 
-<header class="header" id="haut">
+<header class="header is-top" id="haut">
   <div class="header__in">
     <a class="logo" href="#haut" aria-label="A.S Menuiserie, retour en haut">
       <span class="logo__mark" aria-hidden="true"><span>A.S</span></span>
@@ -101,43 +101,42 @@
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="titre">
+  <div class="hero__media">
+    <img src="assets/img/pergola-terrasse-1600.webp" srcset="assets/img/pergola-terrasse-800.webp 800w, assets/img/pergola-terrasse-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Pergola bioclimatique alu anthracite à lames orientables posée sur une terrasse, avec fermeture vitrée coulissante" fetchpriority="high">
+  </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <span class="pane pane--l" aria-hidden="true"></span>
+  <span class="pane pane--r" aria-hidden="true"></span>
+
   <div class="hero__in">
     <div class="hero__text">
       <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Menuisier poseur · Llupia, près de Thuir</p>
-      <h1 id="titre" class="hero__title">Menuiseries <span class="t-terra">alu&nbsp;&amp;&nbsp;PVC</span> dans les Pyrénées-Orientales</h1>
-      <p class="hero__lead"><strong>La qualité, notre priorité.</strong> Fenêtres, volets, portes, portails, pergolas et vérandas&nbsp;: une petite équipe de Llupia qui conseille, pose et laisse le chantier propre.</p>
+      <h1 id="titre" class="hero__title">Menuiseries <span class="t-accent">alu&nbsp;&amp;&nbsp;PVC</span> dans les Pyrénées-Orientales</h1>
+      <p class="hero__lead"><strong>La qualité, notre priorité.</strong> Fenêtres, volets, portes, portails, pergolas et vérandas, posés par une petite équipe de Llupia qui laisse le chantier propre.</p>
+      <div class="hero__cta">
+        <a class="btn btn--terra btn--lg" href="#devis">Demander un devis gratuit <svg class="ic" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        <a class="btn btn--glass btn--lg" href="tel:+33648528535"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>Appeler le 06 48 52 85 35</a>
+      </div>
       <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=A.S+Menuiserie+7+Los+Comalls+66300+Llupia" target="_blank" rel="noopener">
         <span class="rating__stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
         <span><strong>5/5</strong> · 39 avis Google</span>
       </a>
-      <div class="hero__cta">
-        <a class="btn btn--terra btn--lg" href="#devis">Demander un devis gratuit <svg class="ic" aria-hidden="true"><use href="#i-fleche"/></svg></a>
-        <a class="btn btn--line btn--lg" href="tel:+33648528535"><svg class="ic" aria-hidden="true"><use href="#i-tel"/></svg>Appeler le 06 48 52 85 35</a>
-      </div>
-      <div class="quick" role="group" aria-label="Choisir votre projet pour le devis">
-        <p class="quick__label">Votre projet&nbsp;:</p>
-        <div class="quick__list">
-          <a href="#devis" data-projet="Fenêtres / baie vitrée"><svg aria-hidden="true"><use href="#i-fenetre"/></svg>Fenêtres</a>
-          <a href="#devis" data-projet="Volets roulants"><svg aria-hidden="true"><use href="#i-volet"/></svg>Volets</a>
-          <a href="#devis" data-projet="Porte d'entrée"><svg aria-hidden="true"><use href="#i-porte"/></svg>Portes</a>
-          <a href="#devis" data-projet="Portail / clôture"><svg aria-hidden="true"><use href="#i-portail"/></svg>Portail</a>
-          <a href="#devis" data-projet="Pergola"><svg aria-hidden="true"><use href="#i-pergola"/></svg>Pergola</a>
-          <a href="#devis" data-projet="Véranda"><svg aria-hidden="true"><use href="#i-veranda"/></svg>Véranda</a>
-        </div>
-      </div>
     </div>
 
-    <div class="hero__visual">
-      <div class="cote cote--top" aria-hidden="true"><i></i><span>Sur mesure</span><i></i></div>
-      <div class="cote cote--side" aria-hidden="true"><i></i><span>Posé par nos soins</span><i></i></div>
-      <figure class="frame">
-        <img src="assets/img/pergola-terrasse-1600.webp" srcset="assets/img/pergola-terrasse-800.webp 800w, assets/img/pergola-terrasse-1600.webp 1600w" sizes="(min-width: 960px) 52vw, 100vw" width="1600" height="1200" alt="Pergola bioclimatique alu anthracite à lames orientables posée sur une terrasse, avec fermeture vitrée coulissante" fetchpriority="high">
-        <span class="pane pane--l" aria-hidden="true"></span>
-        <span class="pane pane--r" aria-hidden="true"></span>
-        <figcaption class="frame__cap">Pergola bioclimatique · notre chantier</figcaption>
-      </figure>
+    <div class="quick" role="group" aria-label="Choisir votre projet pour le devis">
+      <p class="quick__label">Votre projet&nbsp;?</p>
+      <div class="quick__list">
+        <a href="#devis" data-projet="Fenêtres / baie vitrée"><svg aria-hidden="true"><use href="#i-fenetre"/></svg>Fenêtres</a>
+        <a href="#devis" data-projet="Volets roulants"><svg aria-hidden="true"><use href="#i-volet"/></svg>Volets</a>
+        <a href="#devis" data-projet="Porte d'entrée"><svg aria-hidden="true"><use href="#i-porte"/></svg>Portes</a>
+        <a href="#devis" data-projet="Portail / clôture"><svg aria-hidden="true"><use href="#i-portail"/></svg>Portail</a>
+        <a href="#devis" data-projet="Pergola"><svg aria-hidden="true"><use href="#i-pergola"/></svg>Pergola</a>
+        <a href="#devis" data-projet="Véranda"><svg aria-hidden="true"><use href="#i-veranda"/></svg>Véranda</a>
+      </div>
     </div>
   </div>
+
+  <p class="hero__cap" aria-hidden="true"><span class="cote"><i></i></span>Pergola bioclimatique · un de nos chantiers</p>
 </section>
 
 <!-- CONFIANCE -->
